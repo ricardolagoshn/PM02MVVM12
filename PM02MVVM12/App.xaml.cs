@@ -10,7 +10,7 @@ namespace PM02MVVM12
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.PageOrdenes();
         }
 
         protected override void OnStart()

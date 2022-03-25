@@ -15,13 +15,9 @@ namespace PM02MVVM12.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")
         {
-            if (object.Equals(storage, value))
-            {
-                return false;
-            }
-
+            if (object.Equals(storage, value)) return false;
             storage = value;
             OnPropertyChanged(propertyName);
             return true;

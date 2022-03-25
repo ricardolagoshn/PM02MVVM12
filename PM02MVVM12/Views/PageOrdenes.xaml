@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vo="clr-namespace:PM02MVVM12.ViewModels"
+             x:Class="PM02MVVM12.Views.PageOrdenes"
+             >
+
+    <ContentPage.BindingContext>
+        <vo:OrdenesViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+       
+
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Cliente :" />
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Orden :" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Monto}" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Status :" />
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Status}" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Fecha :" />
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding FEcha}" />
+
+
+
+            <Button Grid.Row="4" Grid.Column="0" Text="Limpiar" Command="{Binding CleanCommand}" />
+            <Button Grid.Row="4" Grid.Column="1" Text="Guardar" Command="{Binding AddComand}" />
+
+
+        </Grid>
+            
+            
+       
+    </ContentPage.Content>
+</ContentPage>
